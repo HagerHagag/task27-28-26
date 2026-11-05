@@ -1,38 +1,169 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7fb;
+  color: #28243a;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.products-section > h2 {
+  margin-bottom: 18px;
+  font-size: 21px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #ecebf2;
+  border-radius: 15px;
+  padding: 20px;
+  transition: 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(40, 30, 80, 0.07);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.product-info h3 {
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.product-info p {
+  font-size: 13px;
+  color: #9997a5;
+}
+
+.quantity-badge {
+  background: #f0ebff;
+  color: #7956d8;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quantity-controls button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  background: #7956d8;
+  color: white;
+  font-size: 20px;
+}
+
+.quantity-controls button:disabled {
+  background: #d8d5e1;
+  cursor: not-allowed;
+}
+
+.quantity-controls span {
+  min-width: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 8px 11px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.edit-btn {
+  background: #edf5ff;
+  color: #4785cc;
+}
+
+.delete-btn {
+  background: #fff0ef;
+  color: #dc625d;
+}
+
+.empty-message {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  color: #88869a;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 650px) {
+  .container {
+    margin: 20px auto;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .header {
+    gap: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .summary {
+    gap: 10px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-bottom {
+    align-items: flex-start;
   }
 }
